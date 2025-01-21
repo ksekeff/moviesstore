@@ -2,8 +2,6 @@ from django.shortcuts import render
 from .models import Movie
 
 
-
-
 def index(request):
     search_term = request.GET.get('search')
     if search_term:
@@ -19,7 +17,7 @@ def index(request):
     })
     
 def show(request, id):
-    movie = movie = Movie.objects.get(id=id)
+    movie = Movie.objects.get(id=id)
     template_data = {}
     template_data['title'] = movie.name
     template_data['movie'] = movie
